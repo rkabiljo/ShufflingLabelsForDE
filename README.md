@@ -57,3 +57,22 @@ for (file in files) {
 dim(sigs)
 #              [1]    3 1001
 ```
+<br>The following code is just an example of how to explore the numbers in sigs.  Each number represents the number of significant genes at either 0.1, 0.01 or 0.05 <br>
+
+```
+length(as.numeric(sigs["significant0_05",2:1001])[as.numeric(sigs["significant0_05",2:1001])>1285])
+ #             [1] 1
+length(as.numeric(sigs["significant0_01",2:1001])[as.numeric(sigs["significant0_01",2:1001])>207])
+#              [1] 0
+length(as.numeric(sigs["significant0_1",2:1001])[as.numeric(sigs["significant0_1",2:1001])>2443])
+ #             [1] 1
+summary(as.numeric(sigs["significant0_1",2:1001]))
+#              Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#              0.00    1.00    3.00   19.05    8.00 3562.00 
+summary(as.numeric(sigs["significant0_01",2:1001]))
+ #             Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#              0.000   0.000   1.000   2.478   2.000 103.000 
+summary(as.numeric(sigs["significant0_05",2:1001]))
+ #             Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+#              0.000    1.000    2.000    8.152    5.000 1821.000 
+```
