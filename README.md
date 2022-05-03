@@ -20,7 +20,8 @@ sbatch -p brc --mem=10G runR.sh C
 
 'A' is a prefix for output file.  I did it becasue I split it in 100 random permutations, and the results of each one will be written to a different file, e.g. significantPermutationsA11.41.13.csv.  I sent 10 jobs with different prefix letters so that they could run at once.
 
-# Merge the output files 
+# Merge the output files and look at results
+<br>this is also in script countingPermutationsFromCsvRes.R<br>
 
 Go to the directory where all csv files from previous step are
 
